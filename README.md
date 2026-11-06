@@ -33,3 +33,10 @@ The trade-off is precision for stability. The tabulated dates drift from true as
 Year 0 is accepted and yields golden number 1, keeping the cycle continuous across the proleptic BC/AD boundary. Negative years work the same way — Python's modulo keeps results non-negative. Non-integer years raise `TypeError`; out-of-range golden numbers raise `ValueError`.
 
 The paschal full-moon table is the Western (Gregorian) ecclesiastical convention. It does not match the Orthodox computus, which uses the Julian calendar and a different lunar correction.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
