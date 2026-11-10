@@ -1,6 +1,6 @@
 [project]
 name = "tiny-metonic-cycle"
-version = "0.1.0"
+version = "0.1.1"
 description = "Calculates the paschal full moon using the 19-year Metonic cycle to determine dates for movable feasts."
 requires-python = ">=3.10"
 dependencies = []
